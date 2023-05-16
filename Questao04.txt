@@ -1,0 +1,26 @@
+Os hooks, como useState e useEffect são importantes para o react visto sua funcionalidade de atualizar valores sem necessidade de recarregar a página. Tendo o useState como exemplo, ele nos permite definir variáveis que só podem ser alteradas por uma função específica em qualquer escopo do projeto, mesmo dentro de componentes filhos, o que é uma facilidade para quem não está trabalhando com classes ter a opção de usar um set. Por outro lado, o useEffect ajuda no controle da atualização das informações dispostas, onde podemos controlar o que ocorre quando algumas variáveis tem seus valores alterados, o que funciona bem com useState e nos permite realizar callbacks em cadeia.
+
+exemplo de hook useState:
+
+    const [valor, setValor] = useState(0);
+
+quando necessário usar o valor, basta usar o valor como se usa uma variável.
+
+    console.log(valor);
+
+quando necessário alterar o valor dele, mesmo sendo uma constante que define o useState, o setValor funciona dessa forma.
+
+    setValor(15);
+
+
+exemplo de hook useEffect:
+
+    useEffect(
+        (param) => {
+            console.log(valor);
+        }
+        , [valor]
+    )
+
+O useEffect tem essa estrutura básica que tem como parâmetros uma função e um vetor de variáveis a serem observadas. Qualquer alteração que essas variáveis sofram, executará a função do primeiro parâmetro.
+obs: o vetor de variáveis a serem observadas pode ser vazio.
